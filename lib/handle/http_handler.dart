@@ -3,13 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_error_report/model/report.dart';
 
 class HttpHandler {
-  final Dio dio;
+  final Dio dio=Dio();
 
   final Uri endpointUri;
 
-  HttpHandler({@required this.endpointUri, @required this.dio}) {
+  HttpHandler({@required this.endpointUri}) {
     assert(this.endpointUri != null, "Endpoint uri can't be null");
-    assert(this.dio != null, "dio can't be null");
   }
 
   void handle(Report report) async {

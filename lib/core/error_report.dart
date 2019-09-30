@@ -19,8 +19,6 @@ class ErrorReport {
   final Widget rootWidget;
   /// 上报的后台地址 避谈
   final Uri uri;
-  /// dio实例
-  final Dio dio;
   /// 自定义参数 例如：用户id
   Map<String, dynamic> customParameters=Map();
 
@@ -30,7 +28,7 @@ class ErrorReport {
   Map<String, dynamic> _applicationParameters = Map();
 
 
-  ErrorReport( {@required this.rootWidget,@required this.uri,@required this.dio, @required this.customParameters}) {
+  ErrorReport( {@required this.rootWidget,@required this.uri, @required this.customParameters}) {
     _configure();
   }
 
@@ -146,7 +144,7 @@ class ErrorReport {
     }else if(kProfileMode){
       ConsoleHandler().handle(report);
     }else{
-      HttpHandler(endpointUri:this.uri ,dio: this.dio).handle(report);
+      HttpHandler(endpointUri:this.uri).handle(report);
     }
   }
 
