@@ -15,7 +15,7 @@ class ConsoleHandler {
 
   void handle(Report report) {
     debugPrint(
-        "============================== CATCHER LOG ==============================");
+        "============================== ErrorReport Log ==============================");
     debugPrint("Crash occured on ${report.dateTime}");
     debugPrint("");
     if (enableDeviceParameters) {
