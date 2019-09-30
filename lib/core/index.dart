@@ -30,7 +30,7 @@ class ErrorReport {
   Map<String, dynamic> _applicationParameters = Map();
 
 
-  ErrorReport( {@required this.rootWidget,@required this.uri,@required this.dio, this.customParameters}) {
+  ErrorReport( {@required this.rootWidget,@required this.uri,@required this.dio, @required this.customParameters}) {
     _configure();
   }
 
